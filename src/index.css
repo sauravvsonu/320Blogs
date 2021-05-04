@@ -6,16 +6,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-
-  background: url('./img/mario-bg.png') no-repeat;
+  background: url('./img/bricks.jpeg') ;
   background-size: 100%;
-  background-color: #95e8f3;
-  background-position: bottom;
+  background-position: top;
 }
 
 form {
   padding: 20px;
   margin-top: 60px;
+ background: rgb(242 223 223 / 68%) !important;
 }
 
 form button, form h5{
@@ -28,4 +27,8 @@ input[type=email]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]){
   border-color: #ec407a;
   box-shadow: none;
+}
+
+.card {
+ background: rgb(242 223 223 / 68%) !important;
 }

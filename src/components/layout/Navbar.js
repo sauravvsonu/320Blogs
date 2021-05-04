@@ -9,11 +9,11 @@ const Navbar = (props) => {
   const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
   // const LoadedNavBar = auth.isLoaded ? links : null
 
-return (
-    <nav className="nav-wrapper grey darken-3">
+  return (
+    <nav className="nav-wrapper" style={{ background: "rgba(0,0,0,0.95)" }}>
       <div className="container">
-        <Link to='/' className="brand-logo">MarioPlan</Link>
-        { auth.isLoaded &&  links }
+        <Link to='/' className="brand-logo">320Blog</Link>
+        {auth.isLoaded && links}
       </div>
     </nav>
   )

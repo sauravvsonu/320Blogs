@@ -12,7 +12,7 @@ const Navbar = (props) => {
   return (
     <nav className="nav-wrapper" style={{ background: "rgba(0,0,0,0.95)" }}>
       <div className="container">
-        <Link to='/' style={{ fontWeight: 600, letterSpacing: '2px', float: 'left' }}>320Blog</Link>
+        <Link to='/' style={{ fontWeight: 600, letterSpacing: '2px', float: 'left', fontSize: '20px' }}>320Blog</Link>
         {auth.isLoaded && links}
       </div>
     </nav>

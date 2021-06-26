@@ -13,6 +13,9 @@ class Dashboard extends Component {
     if (!auth.uid) {
       return <Redirect to="/signin" />;
     }
+    projects.sort((x, y) => {
+      return y.createdAt.seconds - x.createdAt.seconds;
+    });
     return (
       <div className="dashboard container">
         <div className="row">
@@ -30,6 +33,7 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
   // console.log(state);
+ 
   return {
     projects: state.firestore.ordered.projects,
     auth: state.firebase.auth,
@@ -40,7 +44,7 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: "projects", orderBy: ["createdAt", "desc"] },
+    { collection: "projects" },
     { collection: "notification", orderBy: ["time", "desc"], limit: 3 },
   ])
 )(Dashboard);

@@ -2,11 +2,9 @@ import React from "react";
 import moment from "moment";
 
 const Notifications = (props) => {
-  console.log(props);
   const { notifications } = props;
   return (
     <div className="section">
-      {console.log(notifications)}
       <div className="card z-depth-0">
         <div className="card-content">
           <span className="card-title ">Notifications:</span>

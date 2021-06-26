@@ -4,9 +4,16 @@ import { firestoreConnect } from "react-redux-firebase";
 import { Redirect } from "react-router-dom";
 import { compose } from "redux";
 import moment from "moment";
+import { deleteProject } from "../../store/actions/deleteAction";
 
 const ProjectDetails = (props) => {
-  const { project, auth } = props;
+  const { project, auth, projectId } = props;
+
+  const deleteProject = () => {
+    props.deleteProject(projectId);
+    props.history.push("/");
+  };
+
   if (!auth.uid) {
     return <Redirect to="/signin" />;
   }
@@ -15,6 +22,15 @@ const ProjectDetails = (props) => {
       <div className="container section project-details">
         <div className="card z-depth-0">
           <div className="card-content">
+            <div style={{ float: "right" }}>
+              <button
+                className="btn red lighten-1 z-depth-0"
+                disabled={!(auth.uid === project.authorId)}
+                onClick={deleteProject}
+              >
+                Delete
+              </button>
+            </div>
             <span className="card-title">{project.title}</span>
             <p>{project.content}</p>
             <div className="card-action gret lighten-4 grey-text text-darken-3">
@@ -45,10 +61,17 @@ const mapStateToProps = (state, onProps) => {
   return {
     project: project,
     auth: state.firebase.auth,
+    projectId: id
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteProject: (projectId) => dispatch(deleteProject(projectId)),
   };
 };
 
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([{ collection: "projects" }])
 )(ProjectDetails);

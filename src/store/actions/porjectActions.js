@@ -4,7 +4,6 @@ export const createProject = (project) => {
     const firestore = getFirestore();
     const profile = getState().firebase.profile;
     const auth = getState().firebase.auth.uid;
-    const firebase = getFirebase();
     firestore
       .collection("projects")
       .add({

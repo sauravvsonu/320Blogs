@@ -15,7 +15,7 @@ body {
 form {
   padding: 20px;
   margin-top: 60px;
- background: rgb(242 223 223 / 68%) !important;
+ background: rgb(255 255 255 / 78%) !important;
 }
 
 form button, form h5{
@@ -31,6 +31,6 @@ textarea.materialize-textarea:focus:not([readonly]){
 }
 
 .card {
- background: rgb(242 223 223 / 68%) !important;
+ background: rgb(255 255 255 / 68%) !important;
  border-radius: 8px  !important;
 }

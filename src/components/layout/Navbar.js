@@ -10,9 +10,9 @@ const Navbar = (props) => {
   // const LoadedNavBar = auth.isLoaded ? links : null
 
   return (
-    <nav className="nav-wrapper" style={{ background: "rgba(0,0,0,0.95)" }}>
+    <nav className="nav-wrapper" style={{ background: "rgba(0,0,0,0.50)" }}>
       <div className="container">
-        <Link to='/' style={{ fontSize: '18px', fontWeight: 600, letterSpacing: '2px', float: 'left', position: 'absolute' }}>320Blog</Link>
+        <Link to='/' style={{ fontSize: '18px', fontWeight: 600, letterSpacing: '2px', float: 'left', position: 'absolute' }}>Monkey Plan</Link>
         {auth.isLoaded && links}
       </div>
     </nav>

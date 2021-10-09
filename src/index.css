@@ -6,7 +6,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: url('./img/bricks.jpeg') ;
+  /* background: url('./img/bricks.jpeg') ; */
+  background-image: linear-gradient(to right,#28c8fc ,#3eabfd, #686ffb, #815dfe);
   background-size: 100%;
   background-position: top;
 }
@@ -31,4 +32,5 @@ textarea.materialize-textarea:focus:not([readonly]){
 
 .card {
  background: rgb(242 223 223 / 68%) !important;
+ border-radius: 8px  !important;
 }
